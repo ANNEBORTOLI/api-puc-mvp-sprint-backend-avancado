@@ -1,6 +1,6 @@
 from model import Session
 from model.product import Product
-from schemas.product import ProductDelSchema, ProductSchema, apresenta_product
+from schemas.product import ProductDelSchema, ProductSchema, ProductViewSchema, apresenta_product, apresenta_products
 
 
 def create_product(form: ProductSchema):
@@ -27,12 +27,12 @@ def create_product(form: ProductSchema):
         return {"message": error_msg}, 400
 
 
-def search_product(form: ProductDelSchema):
-    """Busca no BD pelo Produto
+def search_product(query: ProductDelSchema):
+    """Busca no BD pelo Produto a partir de seu id
     """
     try:
         session = Session()
-        product = session.query(Product).filter_by(id = form.id)
+        product = session.query(Product).filter(Product.id == query.id).first()
 
         if not product:
             error_msg = "Produto não encontrado na base :/"
@@ -44,16 +44,28 @@ def search_product(form: ProductDelSchema):
         error_msg = "Não foi possível consultar o Produto :/"
         return {"message": error_msg}, 400
 
+def search_products():
+    """Busca no BD pelos Produtos
+    """
+    try:
+        session = Session()
+        products = session.query(Product).all()
 
-def change_product(form: ProductSchema):
+        return apresenta_products(products), 200
+
+    except Exception as e:
+        error_msg = "Não foi possível consultar os Produtos :/"
+        return {"message": error_msg}, 400
+
+
+def change_product(form: ProductViewSchema):
     """ Edita o Produto na base de dados
     """
 
     try:
-        product_id = form.id
         session = Session()
         product = session.query(Product).filter(
-            product.id == product_id)
+            Product.id == form.id).first()
 
         if not product:
             error_msg = "Produto não encontrado na base :/"
@@ -78,10 +90,9 @@ def remove_product(form: ProductDelSchema):
     """
 
     try:
-        product_id = form.id
         session = Session()
         product = session.query(Product).filter(
-            product.id == product_id)
+            Product.id == form.id).first()
 
         if not product:
             error_msg = "Produto não encontrado na base :/"

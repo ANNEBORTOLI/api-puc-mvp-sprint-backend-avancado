@@ -1,10 +1,10 @@
-# PIKombucha - Backend de
+# PIKombucha - Backend de Produtos
 
 ## Sobre o projeto
 
-O objetivo deste projeto é implementar um MVP de um API backend REST responsável por tratar endereços de usuários. Funciona em conjunto com o frontend disponível neste [repositório](https://github.com/marcelo-monte/puc-rj-mvp-sprint3-backend-avancado-frontend). Possibilita a inclusão, remoção, edição e visualização do endereço de um usuário.
+O objetivo deste projeto é implementar um MVP de um API backend REST responsável por tratar os produtos do PIKombucha, que é um site para venda de bebidas saudáveis. Funciona em conjunto com o frontend disponível neste [repositório](https://github.com/ANNEBORTOLI/frontend-puc-mvp-sprint-backend-avancado). Possibilita a inclusão, remoção, edição e visualização dos produtos.
 
-Este projeto fez parte do MVP da Sprint 3 da Pós-Graduação da PUC-RJ (Backend avançado)
+Este projeto fez parte do MVP da Sprint de Backend Avançado da Pós-Graduação da PUC-RJ
 
 ### 🛠️Tecnologias Principais
 
@@ -18,31 +18,32 @@ Este projeto fez parte do MVP da Sprint 3 da Pós-Graduação da PUC-RJ (Backend
 
 ### 📑Regras de negócio
 
-- Inclusão, remoção, edição e visualização do endereço de um usuário
+- Inclusão, remoção, edição e visualização dos produtos do PIKombucha
 -
 
 ### Endpoints
 
 - User Endpoints
 
-| URL / ENDPOINT | VERBO  | DESCRIÇÃO                          |
-| -------------- | ------ | ---------------------------------- |
-| /usuario       | GET    | Retorna o usuário com seu endereço |
-| /endereco      | POST   | Cria um endereço para o usuário    |
-| /endereco      | DELETE | Remove o endereço do usuário       |
-| /endereco      | PUT    | Edita o endereço do usuário        |
+| URL / ENDPOINT | VERBO  | DESCRIÇÃO                            |
+| -------------- | ------ | ------------------------------------ |
+| /product       | GET    | Retorna o produto a partir de seu id |
+| /product       | POST   | Adiciona um produto                  |
+| /product       | DELETE | Remove um produto                    |
+| /product       | PUT    | Edita um produto                     |
+| /products      | GET    | Retorna todos os produtos            |
 
 ## Documentação
 
 - Lista das rotas no Swagger
 <div align="center">
-  <img src="public/swagger.png">
+  <img src="public/rotas-swagger.png">
 </div>
 <br>
 
 - Arquitetura do projeto
 <div align="center">
-  <img src="public/arquitetura.png">
+  <img src="public/desenho.png">
 </div>
 <br>
 
@@ -55,8 +56,8 @@ Seguem as instruções para a instalação, configuração e uso da aplicação.
 1. Clone do repositório
 
 ```sh
-   git clone git@github.com:marcelo-monte/puc-rj-mvp-sprint3-backend-avancado-api.git
-   cd puc-rj-mvp-sprint3-backend-avancado-api
+   git clone git@github.com:ANNEBORTOLI/api-puc-mvp-sprint-backend-avancado.git
+   cd api-puc-mvp-sprint-backend-avancado
 ```
 
 2. Criar um virtual environment, na raiz do projeto:
@@ -113,5 +114,5 @@ Seguem as instruções para a instalação, configuração e uso da aplicação.
 
 ## Desenvolvedor
 
-- [Github](https://github.com/marcelo-monte)
-- [Linkedin](https://www.linkedin.com/in/marcelo-monte-fernandes/)
+- [Github](https://github.com/ANNEBORTOLI)
+- [LinkedIn](https://www.linkedin.com/in/anne-bortoli/)
