@@ -2,7 +2,7 @@
 
 ## Sobre o projeto
 
-O objetivo deste projeto é implementar um MVP de um API backend REST responsável por tratar os produtos do PIKombucha, que é um site para venda de bebidas saudáveis. Funciona em conjunto com o frontend disponível neste [repositório](https://github.com/ANNEBORTOLI/frontend-puc-mvp-sprint-backend-avancado). Possibilita a inclusão, remoção, edição e visualização dos produtos.
+O objetivo deste projeto é implementar um MVP de um API backend REST responsável por tratar os produtos do PIKombucha, que é um site para venda de bebidas saudáveis. Funciona em conjunto com o frontend disponível neste [repositório](https://github.com/ANNEBORTOLI/ftont-puc-mvp-sprint-backend-avancado-). Possibilita a inclusão, remoção, edição e visualização dos produtos.
 
 Este projeto fez parte do MVP da Sprint de Backend Avançado da Pós-Graduação da PUC-RJ
 
