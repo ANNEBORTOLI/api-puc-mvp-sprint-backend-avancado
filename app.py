@@ -59,7 +59,7 @@ def get_products():
 
 @app.delete('/product', tags=[product_tag],
             responses={"200": ProductDelViewSchema, "404": ErrorSchema})
-def del_product(form: ProductDelSchema):
+def del_product(query: ProductDelSchema):
     """Deleta o produto na base de dados
     """
-    return remove_product(form)
+    return remove_product(query)

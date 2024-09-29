@@ -85,14 +85,14 @@ def change_product(form: ProductViewSchema):
         return {"message": error_msg}, 400
 
 
-def remove_product(form: ProductDelSchema):
+def remove_product(query: ProductDelSchema):
     """Deleta o produto na base de dados
     """
 
     try:
         session = Session()
         product = session.query(Product).filter(
-            Product.id == form.id).first()
+            Product.id == query.id).first()
 
         if not product:
             error_msg = "Produto não encontrado na base :/"
